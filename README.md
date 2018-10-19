@@ -10,7 +10,7 @@ Rails 5.2.1 <br/>
 Instructions to setup:
 
 $ git clone <this_repo> <br/>
-$ cd ethic_game <br/>
+$ cd Ethic-game <br/>
 $ sudo su <br/>
 $ chown -R ec2-user ethic_game/ <br/>
 $ exit <br/>
