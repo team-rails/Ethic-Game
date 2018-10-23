@@ -27,3 +27,12 @@ $ rake db:setup <br/>
 $ rake db:migrate (we don't have any yet) <br/>
 $ rails server -p $PORT -b $IP (you won't get the side message but just click preview above and preview running application, than open in a browser.) <br/>
 $ should see the welcome page for rails. <br/>
+
+
+## Pushing to heroku:
+
+(Denish pushes for now but we can make a group account and everyone will do below instructions.)<br/>
+(Only one person needs to do 'heroku create', do not do it if already done.)<br/>
+$ cd Ethics-Game<br/>
+$ do not go into ethic_game directory<br/>
+$ git subtree push --prefix ethic_game heroku master<br/>
