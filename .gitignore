@@ -29,3 +29,5 @@ ethic_game/.byebug_history
 
 # Ignore master key for decrypting credentials and more.
 ethic_game/config/master.key
+
+ethic_game/coverage
