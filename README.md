@@ -7,7 +7,7 @@ CSCE 606 Ethics Game project
 Ruby 2.4.1 <br/>
 Rails 5.2.1 <br/>
 
-Instructions to setup:
+Instructions to setup: <br/> 
 
 $ git clone <this_repo> <br/>
 $ cd Ethic-game <br/>
@@ -27,6 +27,21 @@ $ rake db:setup <br/>
 $ rake db:migrate (we don't have any yet) <br/>
 $ rails server -p $PORT -b $IP (you won't get the side message but just click preview above and preview running application, than open in a browser.) <br/>
 $ should see the welcome page for rails. <br/>
+
+## Database Migration
+
+Make sure your inside the 'ethic_game' directory<br/>
+<br/>
+$ rake db:migrate (upgrade to latest migration) <br/>
+$ rake db:rollback (downgrade recent migration) <br/>
+
+## Start The Application
+
+Make sure your inside the 'ethic_game' directory <br/>
+<br/>
+$ sudo service postgresql restart <br/>
+$ rails server -p $PORT -b $IP <br/>
+
 ## Database Relation Reference
 
 https://guides.rubyonrails.org/association_basics.html<br/>
@@ -40,6 +55,25 @@ Now you can run SQL queries on the db. <br/>
 
 (Denish pushes for now but we can make a group account and everyone will do below instructions.)<br/>
 (Only one person needs to do 'heroku create', do not do it if already done.)<br/>
+<br/> 
 $ cd Ethics-Game<br/>
 $ do not go into ethic_game directory<br/>
 $ git subtree push --prefix ethic_game heroku master<br/>
+
+# Github Contribution Rules
+
+Make sure your inside the 'Ethics-Game' directory<br/>
+<br/> 
+TRY TO AVOID DIRECT MERGE/PUSH TO MASTER <br/> 
+<br/> 
+$ git checkout -b <feature_branch_name> <br/> 
+$ git add . <br/> 
+$ git commit -m "<your_message>" <br/> 
+$ git status (make sure nothing is uncommited and that it shows clean) <br/> 
+$ git checkout master <br/> 
+$ git pull <br/> 
+$ git checkout <feature_branch_name> <br/> 
+$ git rebase master <br/> 
+$ fix any merge conflicts if any <br/> 
+$ git push -u origin <feature_branch_name> <br/> 
+$ now got to github and create a merge request for your branch. <br/> 
