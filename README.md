@@ -1,7 +1,8 @@
 # Ethics-Game
-CSCE 606 Ethics Game project
-
-
+CSCE 606 Ethics Game project <br/> 
+ <br/> 
+Live Site: https://protected-anchorage-46452.herokuapp.com/ <br/> 
+ <br/> 
 ## Requirements:
 
 Ruby 2.4.1 <br/>
