@@ -27,6 +27,9 @@ $ rake db:setup <br/>
 $ rake db:migrate (we don't have any yet) <br/>
 $ rails server -p $PORT -b $IP (you won't get the side message but just click preview above and preview running application, than open in a browser.) <br/>
 $ should see the welcome page for rails. <br/>
+## Database Relation Reference
+
+https://guides.rubyonrails.org/association_basics.html<br/>
 
 ## View Database Locally
 $ psql -d ethic_game_development <br/>

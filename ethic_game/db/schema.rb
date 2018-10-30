@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_040443) do
   end
 
   create_table "player_history", force: :cascade do |t|
+    t.bigint "scenario_id"
     t.bigint "player_id"
     t.bigint "group_id"
     t.bigint "possible_question_id"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_040443) do
     t.index ["player_id"], name: "index_player_history_on_player_id"
     t.index ["possible_question_id"], name: "index_player_history_on_possible_question_id"
     t.index ["possible_response_id"], name: "index_player_history_on_possible_response_id"
+    t.index ["scenario_id"], name: "index_player_history_on_scenario_id"
   end
 
   create_table "players", force: :cascade do |t|
@@ -79,4 +81,5 @@ ActiveRecord::Schema.define(version: 2018_10_30_040443) do
   add_foreign_key "player_history", "players"
   add_foreign_key "player_history", "possible_questions"
   add_foreign_key "player_history", "possible_responses"
+  add_foreign_key "player_history", "scenarios"
 end

@@ -38,6 +38,7 @@ class InitialMigration < ActiveRecord::Migration[5.2]
       end
       
       create_table :player_history do |t|
+        t.references :scenario, index: true, foreign_key: true
         t.references :player, index: true, foreign_key: true
         t.references :group, index: true, foreign_key: true
         t.references :possible_question, index: true, foreign_key: true
