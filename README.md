@@ -28,6 +28,10 @@ $ rake db:migrate (we don't have any yet) <br/>
 $ rails server -p $PORT -b $IP (you won't get the side message but just click preview above and preview running application, than open in a browser.) <br/>
 $ should see the welcome page for rails. <br/>
 
+## View Database Locally
+$ psql -d ethic_game_development <br/>
+
+Now you can run SQL queries on the db. <br/>
 
 ## Pushing to heroku:
 
