@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    @scenarioNames = ["Scenario 1", "Scenario 2", "Scenario 3"];
+    @scenarioNames = ["Test Scenario", "Water Boiling Exercise", "Team Building Exercise"];
   end
   
   def show
