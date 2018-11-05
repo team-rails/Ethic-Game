@@ -15,6 +15,12 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+      
+    when /^the "(.*)" detail page/
+      detail_path($1)
+      
+    when /^the show page for "(.*)"/
+      show_path($1)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
