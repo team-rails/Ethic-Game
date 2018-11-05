@@ -28,5 +28,5 @@ Scenario: See scenario name on detail page
 Scenario: See show page
   Given I am on the "Test Scenario" detail page
   And I go to the show page for "Test Scenario"
-  #Then I will be on the scenario show page
+  Then I should see "Scenario:"
   

@@ -1,6 +1,6 @@
 <div style="background-image: url(<%= asset_path('pexels-photo-281260.jpeg')%>)">
 <div>
-    <h1 class=page_heading''>Welcome to the Ethics Game!</h1>
+    <h1 class='page_heading'>Welcome to the Ethics Game!</h1>
     <h2 class='page_heading'>Scenarios</h2>
 </div>
 <div class="text_center">
@@ -8,8 +8,8 @@
     
      <% @scenarioNames.each do |name| %> 
          <tr>
-             <td><img></img></td>
-             <td><%= link_to "#{name}", {:action => 'show', :name => name}%></td>
+             <td><%= image_tag "hires_ok.png", size: "50x50"%></td>
+             <td><%= link_to "#{name}", detail_path(name)%></td>
          </tr>
      <% end%>
         
