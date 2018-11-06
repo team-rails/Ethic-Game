@@ -37,7 +37,7 @@ class InitialMigration < ActiveRecord::Migration[5.2]
         t.decimal :current_standing
       end
       
-      create_table :player_history do |t|
+      create_table :player_histories do |t|
         t.references :scenario, index: true, foreign_key: true
         t.references :player, index: true, foreign_key: true
         t.references :group, index: true, foreign_key: true
@@ -52,7 +52,7 @@ class InitialMigration < ActiveRecord::Migration[5.2]
   
   def self.down
     ActiveRecord::Base.transaction do
-      drop_table :player_history
+      drop_table :player_histories
       drop_table :player_group_standings
       drop_table :possible_questions_responses
       drop_table :possible_responses

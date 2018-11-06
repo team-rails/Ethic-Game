@@ -1,3 +1,3 @@
 class Player < ApplicationRecord
-    has_one :player_history
+    has_many :player_histories
 end
