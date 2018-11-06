@@ -1,4 +1,4 @@
-<div>
+<!--<div>
     <h1 class='page_heading'><%= @scenario%></h1>
 </div>
 <div class="div_center">
@@ -9,4 +9,30 @@
 </div>
 <div class="div_center">
     <%= link_to 'Start', show_path(@scenario), class: "scenario_start"%>
+</div>
+-->
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    
+   <h1 class='display4 header-text'><%= @scenario%></h1>
+    
+</div>
+
+<div class="container">
+    
+    <div class="center">
+    <%= image_tag('hires_ok.png', size: '500x500')%>
+    </div>
+    
+</div>
+
+<div class="container">
+    
+    This is where to put the description of the scenario
+    
+</div>
+<div class="container">
+    
+    <%= link_to 'Start', show_path(@scenario), class: "scenario_start"%>
+    
 </div>

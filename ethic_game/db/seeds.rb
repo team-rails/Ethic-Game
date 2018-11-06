@@ -8,6 +8,11 @@ scenario = Scenario.create!(
     description: desc,
     created_by: 'me'
     )
+scenario2 = Scenario.create!(
+    title: 'Test Scenario',
+    description: 'Description',
+    created_by: 'me'
+    )
 
 # Create the player
 player = Player.create!(

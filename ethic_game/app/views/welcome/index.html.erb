@@ -34,7 +34,7 @@
             <div class="col-8 text-center">
                 <button type="button" class = "btn btn-light" style="background-color: rgba(245, 245, 245, 0.6)" >
                 <h1 class="pt-4 pb-4 display-5 header-text">
-                    <%= link_to "#{name}", {:action => 'show', :name => name}%>
+                    <%= link_to "#{name}", detail_path(name)%>
                 </h1>
                 </button>
             </div>
