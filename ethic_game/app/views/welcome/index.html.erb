@@ -1,3 +1,4 @@
+<!--
 <div style="background-image: url(<%= asset_path('pexels-photo-281260.jpeg')%>)">
 <div>
     <h1 class='page_heading'>Welcome to the Ethics Game!</h1>
@@ -17,3 +18,27 @@
     
 </div>
 </div>
+-->
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+    
+    <h1 class="display-4 header-text">Welcome to the Ethics Game!</h1>
+    
+</div>
+
+
+    
+    <% @scenarioNames.each do |name| %> 
+        <div class="row" style="background:transparent url('/assets/village.jpg') no-repeat center /cover">>
+            <div class="col-2"></div>
+            <div class="col-8 text-center">
+                <button type="button" class = "btn btn-light" style="background-color: rgba(245, 245, 245, 0.6)" >
+                <h1 class="pt-4 pb-4 display-5 header-text">
+                    <%= link_to "#{name}", detail_path(name)%>
+                </h1>
+                </button>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    <% end%>
+    

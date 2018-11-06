@@ -13,7 +13,7 @@ Scenario: open the home page
     
 Scenario: see test scenario on  scenario page
   Given I am on the home page
-  Then I should see "Test Scenario"
+  Then I should see "Welcome"
   
 Scenario: See scenario name on detail page
     Given I am on the home page
