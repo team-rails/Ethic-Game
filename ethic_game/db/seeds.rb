@@ -8,7 +8,7 @@ scenario = Scenario.create!(
     description: desc,
     created_by: 'me'
     )
-scenario2 = Scenario.create!(
+Scenario.create!(
     title: 'Test Scenario',
     description: 'Description',
     created_by: 'me'
@@ -33,31 +33,6 @@ pgs = PlayerGroupStanding.create!(
     player_id: player.id,
     group_id: groupC.id,
     current_standing: 50
-    )
-
-# Defaul Q/A
-q0 = PossibleQuestion.create!(
-    question: 'n/a',
-    points: 0
-    )
-a0 = PossibleResponse.create!(
-    response: 'n/a'
-    )
-    
-qa = PossibleQuestionsResponse.create!(
-    possible_question_id: q0.id,
-    possible_response_id: a0.id
-    )
-
-# Initialize the state iteration
-history = PlayerHistory.create!(
-    scenario_id: scenario.id,
-    player_id: player.id,
-    group_id: groupC.id,
-    possible_question_id: q0.id,
-    possible_response_id: a0.id,
-    points: 0,
-    notes: 'default'
     )
 
 # Seeded questions and responses
@@ -120,12 +95,40 @@ GroupsPossibleQuestion.create!(
     group_id: groupC.id,
     possible_question_id: q3.id
     )
+    
+# Hardcoded histories
+PlayerHistory.create!(
+    scenario_id: scenario.id,
+    player_id: player.id,
+    group_id: groupC.id,
+    possible_question_id: q1.id,
+    possible_response_id: a1.id,
+    points: 0,
+    notes: 'default'
+    )
+    
+PlayerHistory.create!(
+    scenario_id: scenario.id,
+    player_id: player.id,
+    group_id: groupC.id,
+    possible_question_id: q2.id,
+    possible_response_id: a2.id,
+    points: 0,
+    notes: 'default'
+    )
+    
+PlayerHistory.create!(
+    scenario_id: scenario.id,
+    player_id: player.id,
+    group_id: groupC.id,
+    possible_question_id: q3.id,
+    possible_response_id: a3.id,
+    points: 0,
+    notes: 'default'
+    )
 
 p "DB Seeded succesfully"
 p scenario
 p player
 p groupC
 p pgs
-p q0
-p a0
-p history

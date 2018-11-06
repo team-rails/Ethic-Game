@@ -16,14 +16,9 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     
-    <h1 class="display-4 header-text">Scenario: <%=@scenario%></h1>
+    <h1 class="display-4 header-text">Scenario: <%= @scenario.title%></h1>
     
-    <div class="container">
-        You are a member of a team of public relations officers assigned to a project.
-    This project is a joint alliance between the US and Peruvian governments. Your role
-    on this project tea is to provide public updates on this hight profile project
-    --- a project that is costing the US and Peruvian governments LOTS of money.
-    </div>
+    <div class="container"><%= @scenario.description%></div>
     
 </div>
 
@@ -34,25 +29,28 @@
     </div>
     
     <div class="card-body">
-        <div class="row">
-            <div class="col-12">
-                <div>Hey</div>
+        <% for i in 0..@history_length %> 
+            <div class="row">
+                <div class="col-12">
+                    <div class='float-right'><%= @question_history[i] %></div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="float-right">Hey</div>
+            <div class="row">
+                <div class="col-12">
+                    <div><%= @response_history[i] %></div>
+                </div>
             </div>
-        </div>
+        <% end%>
         
         <div class="row">
             <div class="col-6">
                 <h5 class="text-center">Villager</h5>
             </div>
             <div class="col-6">
-                <h5 class="text-center">Player</h5>
+                <h5 class="text-center"><%= @player.name%></h5>
             </div>
         </div>
+        
     </div>
     
     <div class="card-footer">
@@ -62,7 +60,9 @@
                 <!--<%= text_field_tag 'name'%>-->
             </div>
             <div class="col-1">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="btn btn-primary">
+                  Submit
+                </div>
             </div>
         </div>
     </div>
