@@ -20,7 +20,11 @@ player = Player.create!(
     )
 
 # Create the groups
-# groupA
+groupA = Group.create!(
+    name: 'Villager A', 
+    population_percentage: 45,
+    scenario_id: scenario.id
+    )
 # groupB
 groupC = Group.create!(
     name: 'Villager C', 
@@ -92,6 +96,11 @@ GroupsPossibleQuestion.create!(
     )
     
 GroupsPossibleQuestion.create!(
+    group_id: groupA.id,
+    possible_question_id: q2.id
+    )
+    
+GroupsPossibleQuestion.create!(
     group_id: groupC.id,
     possible_question_id: q3.id
     )
@@ -122,6 +131,16 @@ PlayerHistory.create!(
     player_id: player.id,
     group_id: groupC.id,
     possible_question_id: q3.id,
+    possible_response_id: a3.id,
+    points: 0,
+    notes: 'default'
+    )
+    
+PlayerHistory.create!(
+    scenario_id: scenario.id,
+    player_id: player.id,
+    group_id: groupA.id,
+    possible_question_id: q2.id,
     possible_response_id: a3.id,
     points: 0,
     notes: 'default'
