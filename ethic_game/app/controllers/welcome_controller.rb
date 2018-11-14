@@ -44,7 +44,7 @@ class WelcomeController < ApplicationController
   end
   
   def getQuestionResponses(group_question) 
-    # Send in group possible questions
+    # Send in a group possible question, returns all the possible responses for that question
     responses = []
     question_responses = PossibleQuestionsResponse.where("possible_question_id = ?", group_question.possible_question_id)
     question_responses.each do |question_response|
