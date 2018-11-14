@@ -22,10 +22,22 @@ class WelcomeController < ApplicationController
     @player = Player.find(1)
     
     @histories = PlayerHistory.get_player_history(@player)
-    @history_length = @histories.size
+    #@history_length = @histories.size-1
     
-    @question_history = PossibleQuestion.get_question_by_history(@histories)
-    @response_history = PossibleResponse.get_response_by_history(@histories)
+    @groups = Group.get_groups_in_history(@histories)
+    @number_of_groups = @groups.size-1
+    #@active_group = 0
+    if(params.has_key?(:active))
+      @active_group = params[:active].to_i
+      
+    else
+      @active_group = 1
+    end
+    @active_group_name = Group.get_group_name(@active_group)
+    
+    @question_history = PossibleQuestion.get_question_by_history_and_group(@histories, @active_group)
+    @response_history = PossibleResponse.get_response_by_history_and_group(@histories, @active_group)
+    @number_of_questions = @question_history.size-1
     
     #Test code for getQuestionResponses
     groups = Group.all
