@@ -42,30 +42,60 @@ class WelcomeController < ApplicationController
     #Test code for getQuestionResponses
     groups = Group.all
     group = groups[0]
-    group_possible_questions = GroupsPossibleQuestion.where("group_id = ?", group.id)
-    group_possible_question = group_possible_questions[0];
-    #puts("Group possible questions = #{group_possible_question}")
-    responses = getQuestionResponses(group_possible_question)
-    responses.each do |resp|
-      puts("Response is #{resp.response}")
+    asked_question = params[:user_question]
+    if asked_question == '' or asked_question.nil? 
+      return
     end
+    
+    
+    possible_question = PossibleQuestion.get_possible_question(group.id, asked_question)
+    
+    if possible_question.nil?
+      flash[:notice] = "Question was not recognized, please try again."
+      return
+    end
+    
+    possible_response = PossibleResponse.get_possible_response(@player.id, group.id, possible_question.id)
+    
+    if possible_response.nil? # ideally this should never happen as there should be a response if we have a question.
+      flash[:error] = "Something went wrong while generating a response"
+      return
+    end
+    
+    # update group standing
+    current_standing = 1
+    PlayerGroupStanding.update_player_group_standing(@player.id, group.id, current_standing)
+    
+    
+    # update player history
+    points_earned = 1
+    notes = ''
+    PlayerHistory.update_player_history(@scenario.id, @player.id, group.id, possible_question.id, possible_response.id, points_earned, notes)
+    
+    #group_possible_question = group_possible_questions[0];
+    #puts("Group possible questions = #{group_possible_question}")
+    #responses = getQuestionResponses(group_possible_question)
+    #responses.each do |resp|
+    #  puts("Response is #{resp.response}")
+    #end
+    
   end
   
   def show_history
     
   end
   
-  def getQuestionResponses(group_question) 
+  #def getQuestionResponses(group_question) 
     # Send in a group possible question, returns all the possible responses for that question
-    responses = []
-    question_responses = PossibleQuestionsResponse.where("possible_question_id = ?", group_question.possible_question_id)
-    question_responses.each do |question_response|
+  #  responses = []
+  #  question_responses = PossibleQuestionsResponse.where("possible_question_id = ?", group_question.possible_question_id)
+  #  question_responses.each do |question_response|
       #Loop through all the questions responses objects and gets there possible response
       
-      resp = question_response.possible_response
-      responses.push(resp)
-    end
-    return responses
-  end
+  #    resp = question_response.possible_response
+  #    responses.push(resp)
+  #  end
+  #  return responses
+  #end
   
 end

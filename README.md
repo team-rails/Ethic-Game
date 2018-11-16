@@ -52,6 +52,14 @@ $ psql -d ethic_game_development <br/>
 
 Now you can run SQL queries on the db. <br/>
 
+## Current library used for matching questions:
+
+https://github.com/seamusabshere/fuzzy_match <br/>
+
+## Possible Improvements
+
+The following site has many Libraries for NLP related things: http://rubynlp.org/ <br/>
+
 ## Pushing to heroku:
 
 (Denish pushes for now but we can make a group account and everyone will do below instructions.)<br/>

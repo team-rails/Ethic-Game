@@ -34,4 +34,8 @@ class PlayerHistory < ApplicationRecord
         return rhid
     end
     
+    def self.update_player_history(scenario_id, player_id, group_id, possible_question_id, possible_response_id, points, notes)
+        # update the player history table with entry of this interation.
+    end
+    
 end

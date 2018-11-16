@@ -15,4 +15,13 @@ class PossibleQuestion < ApplicationRecord
         return questions
     end
     
+    def self.get_possible_question(group_id, asked_question)
+        possible_questions_for_group = GroupsPossibleQuestion.get_all_group_questions(group_id)
+        possible_question = nil
+        
+        # do fuzzy matching or some ML technique here
+        
+        return possible_question
+    end
+    
 end
