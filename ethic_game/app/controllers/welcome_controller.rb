@@ -2,7 +2,7 @@ class WelcomeController < ApplicationController
   def index
     # This is default info til we get info from the db
     #@scenarioNames = ["Test Scenario", "Water Boiling Exercise", "Team Building Exercise"];
-    @scenarioNames = Scenario.get_all_scenarios
+    @scenarioNames = Scenario.get_all_scenario_titles
     
     @scenarios = Scenario.all
   end

@@ -2,35 +2,16 @@ class PlayerHistory < ApplicationRecord
     belongs_to :player
     
     def self.get_player_history(player)
-        histories = Array.new
-        self.all.each {
-            |history|
-            if history.player_id == player.id
-               histories.push(history)
-            end
-        }
-        return histories
+        return PlayerHistory.where(player_id: player.id)
     end
     
     def self.get_question_history(player)
-        qhid = Array.new
-        self.all.each {
-            |history|
-            if history.player_id == player.id
-               qhid.push(history.possible_question_id)
-            end
-        }
+        qhid = PlayerHistory.where(player_id: player.id).map(&:possible_question_id)
         return qhid
     end
     
     def self.get_question_history(player)
-        rhid = Array.new
-        self.all.each {
-            |history|
-            if history.player_id == player.id
-               rhid.push(history.possible_response_id)
-            end
-        }
+        rhid = PlayerHistory.where(player_id: player.id).map(&:possible_response_id)
         return rhid
     end
     

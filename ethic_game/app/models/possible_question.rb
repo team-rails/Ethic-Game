@@ -3,20 +3,16 @@ class PossibleQuestion < ApplicationRecord
     
     def self.get_question_by_history_and_group(histories, active_group)
         questions = Array.new
-        self.all.each {
-            |question|
-            histories.each {
-                |history|
-                if history.possible_question_id == question.id && history.group_id == active_group
-                   questions.push(question.question)
-                end
-            }
-        }
+        histories.each do |history|
+            if history.group_id == active_group
+                questions.push(PossibleQuestion.find(history.possible_question_id).question)
+            end
+        end
         return questions
     end
     
     def self.get_possible_question(group_id, asked_question)
-        possible_questions_for_group = GroupsPossibleQuestion.get_all_group_questions(group_id)
+        possible_questions_for_group = GroupsPossibleQuestion.get_all_questions_for_a_group(group_id)
         possible_question = nil
         
         # do fuzzy matching or some ML technique here
