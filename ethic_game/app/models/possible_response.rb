@@ -2,23 +2,18 @@ class PossibleResponse < ApplicationRecord
     
     def self.get_response_by_history_and_group(histories, active_group)
         responses = Array.new
-        self.all.each {
-            |response|
-            histories.each {
-                |history|
-                if history.possible_question_id == response.id && history.group_id == active_group
-                   responses.push(response.response)
-                end
-            }
-        }
+        histories.each do |history|
+            if history.group_id == active_group
+                responses.push(PossibleResponse.find(history.possible_response_id).response)
+            end
+        end
         return responses
     end
     
     def self.get_possible_question_resposes(possible_question_id) 
         # Send in a group possible question id, returns all the possible responses for that question
-        responses = []
         question_responses = PossibleQuestionsResponse.where("possible_question_id = ?", possible_question_id)
-        return question_responses
+        return question_responses # this is a collection of qid&rid, if you want response(string), need to query possible_response
     end
     
     def self.get_possible_response(player_id, group_id, possible_question_id)
