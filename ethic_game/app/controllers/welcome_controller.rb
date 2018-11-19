@@ -13,10 +13,7 @@ class WelcomeController < ApplicationController
   end
   
   def show_history
-    
-    puts "Received Params: "
-    puts params
-    
+
     id = params[:id] # retrieve movie ID from URI route
     @scenario = Scenario.find(id) # look up movie by unique ID
     
@@ -44,11 +41,6 @@ class WelcomeController < ApplicationController
     
     id = params[:id] # retrieve movie ID from URI route
     scenario = Scenario.find(id) # look up movie by unique ID
-    
-    puts "Came here"
-    puts params
-    #flash[:notice] = "My break point"
-    #redirect_to show_history_path(params[:id], params[:active_id])
     
     # For now assume only one player
     player = Player.first
