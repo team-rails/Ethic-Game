@@ -38,6 +38,12 @@ pgs = PlayerGroupStanding.create!(
     group_id: groupC.id,
     current_standing: 50
     )
+    
+pgs2 = PlayerGroupStanding.create!(
+    player_id: player.id,
+    group_id: groupA.id,
+    current_standing: 50
+    )
 
 # Seeded questions and responses
 
@@ -46,7 +52,9 @@ q1 = PossibleQuestion.create!(
     points: 0
     )
 a1 = PossibleResponse.create!(
-    response: 'Hello'
+    response: 'Hello',
+    points: 0,
+    group_standing_threshold: 0
     )
     
     
@@ -54,17 +62,22 @@ q2 = PossibleQuestion.create!(
     question: 'What is your name',
     points: 0
     )
+    
 a2 = PossibleResponse.create!(
-    response: 'My name is <name>'
+    response: 'My name is <name>',
+    points: 0,
+    group_standing_threshold: 0
     )
     
 
 q3 = PossibleQuestion.create!(
     question: 'Do you boil your water',
-    points: 0
+    points: 1,
     )
 a3 = PossibleResponse.create!(
-    response: 'Yes'
+    response: 'Yes',
+    points: 2,
+    group_standing_threshold: 0
     )
 
 # Matches questions to responses
@@ -80,7 +93,7 @@ PossibleQuestionsResponse.create!(
     )
     
 PossibleQuestionsResponse.create!(
-    possible_question_id: q2.id,
+    possible_question_id: q3.id,
     possible_response_id: a3.id
     )
 
@@ -105,49 +118,10 @@ GroupsPossibleQuestion.create!(
     possible_question_id: q3.id
     )
     
-# Hardcoded histories
-PlayerHistory.create!(
-    scenario_id: scenario.id,
-    player_id: player.id,
-    group_id: groupC.id,
-    possible_question_id: q1.id,
-    possible_response_id: a1.id,
-    points: 0,
-    notes: 'default'
-    )
-    
-PlayerHistory.create!(
-    scenario_id: scenario.id,
-    player_id: player.id,
-    group_id: groupC.id,
-    possible_question_id: q2.id,
-    possible_response_id: a2.id,
-    points: 0,
-    notes: 'default'
-    )
-    
-PlayerHistory.create!(
-    scenario_id: scenario.id,
-    player_id: player.id,
-    group_id: groupC.id,
-    possible_question_id: q3.id,
-    possible_response_id: a3.id,
-    points: 0,
-    notes: 'default'
-    )
-    
-PlayerHistory.create!(
-    scenario_id: scenario.id,
-    player_id: player.id,
-    group_id: groupA.id,
-    possible_question_id: q2.id,
-    possible_response_id: a3.id,
-    points: 0,
-    notes: 'default'
-    )
 
 p "DB Seeded succesfully"
 p scenario
 p player
 p groupC
 p pgs
+p pgs2

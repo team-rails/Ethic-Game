@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_30_040443) do
+ActiveRecord::Schema.define(version: 2018_11_19_011022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 2018_10_30_040443) do
     t.bigint "group_id"
     t.bigint "possible_question_id"
     t.bigint "possible_response_id"
-    t.decimal "points"
+    t.decimal "points_earned"
     t.string "notes"
     t.index ["group_id"], name: "index_player_histories_on_group_id"
     t.index ["player_id"], name: "index_player_histories_on_player_id"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2018_10_30_040443) do
 
   create_table "possible_responses", force: :cascade do |t|
     t.string "response"
+    t.decimal "points"
+    t.decimal "group_standing_threshold"
   end
 
   create_table "scenarios", force: :cascade do |t|
