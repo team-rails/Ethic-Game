@@ -9,12 +9,6 @@ scenario = Scenario.create!(
     created_by: 'me'
     )
     
-Scenario.create!(
-    title: 'Test Scenario',
-    description: 'Description',
-    created_by: 'me'
-    )
-
 # Create the groups
 groupA = Group.create!(
     name: 'Village Group A', 
