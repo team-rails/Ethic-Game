@@ -69,6 +69,13 @@ $ cd Ethics-Game<br/>
 $ do not go into ethic_game directory<br/>
 $ git subtree push --prefix ethic_game heroku master<br/>
 
+## Reset Heroku Database:
+
+$ heroku pg:reset <br/>
+$ heroku run rake db:migrate <br/>
+$ heroku run rake db:seed <br/>
+
+
 # Github Contribution Rules
 
 Make sure your inside the 'Ethics-Game' directory<br/>

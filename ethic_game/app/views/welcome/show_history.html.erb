@@ -33,6 +33,9 @@
         <div class="card-header text-center">
             Conversations <br/>
             <%= link_to 'Restart Game', detail_path(id: @scenario.id), class: "scenario_start"%>
+            <br/>
+                <div>Current Group Standing: <%= @player_group_standing.current_standing%> </div>
+            <br/>
             <ul class="nav nav-tabs">
                 <% @available_groups.each do |group| %> 
                     <li class="nav-item">
