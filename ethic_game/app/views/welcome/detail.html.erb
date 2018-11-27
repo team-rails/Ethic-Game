@@ -28,11 +28,20 @@
 
 <div class="container">
     
-    This is where to put the description of the scenario
+    <%= @scenario.description%>
     
 </div>
 <div class="container">
     
-    <%= link_to 'Start', show_history_path(id: @scenario.id), class: "scenario_start"%>
-    
+    <!--<%= link_to 'Start', show_history_path(id: @scenario.id), class: "scenario_start"%>-->
+    <%= form_tag create_player_path(scenario_id: @scenario.id) do %>
+            <div class="row">
+                <div class="col-11">
+                    <%= text_field_tag :name,"", placeholder: "What is your name ?",  class: 'form-control', required: true %>
+                </div>
+                <div class="col-1">
+                    <%= submit_tag "Start", class: "btn btn-default btn-primary" %>  
+                </div>
+            </div>
+    <% end %>
 </div>

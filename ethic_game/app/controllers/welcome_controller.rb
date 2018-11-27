@@ -12,13 +12,37 @@ class WelcomeController < ApplicationController
     @scenario = Scenario.find(id) # look up movie by unique ID
   end
   
+  def create_player
+    player_name = params[:name]
+    scenario_id =params[:scenario_id]
+    
+    player = Player.create!(
+      name: player_name
+    )
+    
+    session[:player_id] = player.id
+    
+    groups = Group.where(scenario_id: scenario_id).all()
+    
+    groups.each do |group|
+      PlayerGroupStanding.create!(
+        player_id: player.id,
+        group_id: group.id,
+        current_standing: 100,
+      )
+    end
+    
+    redirect_to show_history_path(params[:scenario_id], params[:active_id]) and return
+  end
+  
   def show_history
 
     id = params[:id] # retrieve movie ID from URI route
+    player_id = session[:player_id]
     @scenario = Scenario.find(id) # look up movie by unique ID
     
     # For now assume only one player
-    @player = Player.find(1)
+    @player = Player.find(player_id)
     
     @available_groups = Group.all
     if @available_groups.nil?
