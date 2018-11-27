@@ -50,6 +50,9 @@ groupAPositiveQuestions  = [
         How do you feel about the team being in your village?", 10, 8],
     ["We need this to work and we want to do it quickly.  
       What do you think would help the partnership between the villagers and the team?", 10, 9],
+    ["Hello", 0, 10],
+    ["How are you?", 0, 11],
+    ["What's up ?", 0, 12],
 ]
 
 #format [Question, points, response_array_index]
@@ -126,6 +129,12 @@ groupAResponses = [ #format [Response, points, group_standing_threshold]
     They can't just tell us what to do, they need to understand our point of view too.", 4.5, 80],
     ["I'm not sure how to get everyone to work together.  Good luck with that.", 1, 50],
     ["We can't work together.  There's no point to your team being here.  We didn't ask for your help.", -4.5, 0]],
+    
+    [["Hello there", 0, 0]],
+    
+    [["I could be better I suppose", 0, 0]],
+    
+    [["The sky", 0, 0]],
 ]
 
 #format [Question, points, response_array_index]
@@ -146,7 +155,11 @@ groupBPositiveQuestions = [
       better and find ways to increase boiled water usage.  
       How do you feel about the team being in your village?", 9.09, 9],
     ["We need this to work and we want to do it quickly.  
-     What do you think would help the partnership between the villagers and the team?", 9.09, 10]
+     What do you think would help the partnership between the villagers and the team?", 9.09, 10],
+    
+    ["Hello", 0, 11],
+    ["How are you?", 0, 12],
+    ["What's up ?", 0, 13],
 ]
 
 #format [Question, points, response_array_index]
@@ -212,6 +225,13 @@ groupBResponses = [ #format [Response, points, group_standing_threshold]
     [["The team needs to meet the villagers and understand their culture.  They can't just tell us what to do, they need to understand our point of view too.", 4.5, 80],
     ["I'm not sure how to get everyone to work together.  Good luck with that.", 1, 50],
     ["We can't work together.  There's no point to your team being here.  We didn't ask for your help.", -4.5, 0]],
+    
+    
+    [["Well than if it isn't the government people.", 0, 0]],
+    
+    [["Yea Yea I am alright", 0, 0]],
+    
+    [["Nothing much", 0, 0]],
 ]
 
 #format [Question, points, response_array_index]
@@ -223,7 +243,10 @@ groupCPositiveQuestions = [
     ["You boil your water, what made you decide to do that? Screen reader support enabled.", 12.5, 4],
     ["Why do you think we tell you to boil your water?", 12.5, 5],
     ["How do you feel about the team being in your village?", 12.5, 6],
-    ["Could you help us get the other villagers to boil their water?", 12.5, 7]
+    ["Could you help us get the other villagers to boil their water?", 12.5, 7],
+    ["Hello", 0, 8],
+    ["How are you?", 0, 9],
+    ["What's up ?", 0, 10],
 ]
 
 #format [Question, points, response_array_index]
@@ -271,7 +294,15 @@ groupCResponses = [ #format [Response, points, group_standing_threshold]
     [["I would love to, but they don't really like me. 
     I'm different than them and that's fine, but they aren't going to listen to me.", 4.5, 80],
     ["Probably not, they don't like me.", 1, 50],
-    ["These people will never listen to me.  They just don't get that it's their water.  No one ever listens.", -4.5, 0]]
+    ["These people will never listen to me.  They just don't get that it's their water.  No one ever listens.", -4.5, 0]],
+    
+    [["Welcome we were waiting for you.", 0, 0]],
+    
+    [["Don't have diarrhea", 0, 0]],
+    
+    [["Just a working day.", 0, 0]],
+    
+    
 ]
 
 
@@ -312,7 +343,6 @@ def seed_group_data(group_id, groupQuestions, groupResponses)
         )
     end
 end
-
 
 seed_group_data(groupA.id, groupAPositiveQuestions, groupAResponses)
 seed_group_data(groupA.id, groupANegativeQuestions, groupAResponses)
