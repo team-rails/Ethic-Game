@@ -2,6 +2,9 @@
 # In the future users should have the means to fill this database themselves to create custom scenerios
 
 # Create the sceneraio
+
+# link to seed: https://docs.google.com/spreadsheets/d/1H-mVSDo0hFwUeFb8rHDSiS8RFiM3ZbVd268LSIvMmLI/edit#gid=0
+
 desc = 'You are a member of a team of public relations officers assigned to a project. This project is a joint alliance between the US and Peruvian governments. Your role on this project tea is to provide public updates on this hight profile project --- a project that is costing the US and Peruvian governments LOTS of money.'
 scenario = Scenario.create!(
     title: 'Water Boiling',
