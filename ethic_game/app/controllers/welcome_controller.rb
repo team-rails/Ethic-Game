@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
   
   def create_player
     player_name = params[:name]
-    scenario_id =params[:scenario_id]
+    scenario_id = params[:scenario_id]
     
     player = Player.create!(
       name: player_name
@@ -31,7 +31,6 @@ class WelcomeController < ApplicationController
         current_standing: 100,
       )
     end
-    
     redirect_to show_history_path(params[:scenario_id], params[:active_id]) and return
   end
   
@@ -69,7 +68,7 @@ class WelcomeController < ApplicationController
     scenario = Scenario.find(id) # look up movie by unique ID
     
     # For now assume only one player
-    player = Player.first
+    player = Player.find(session[:player_id])
 
     active_group = nil
     if(params.has_key?(:active_id))
