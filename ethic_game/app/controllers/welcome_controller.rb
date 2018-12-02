@@ -87,6 +87,7 @@ class WelcomeController < ApplicationController
     
     #map the question is database
     possible_question = PossibleQuestion.get_possible_question(active_group.id, asked_question)
+    @test_question = possible_question
     
     if possible_question.nil?
       flash[:notice] = "Question was not recognized, please try again."
@@ -95,6 +96,7 @@ class WelcomeController < ApplicationController
     
     #get the appropriate response based on player standing with the group (the standing acts as consequences in the model.)
     possible_response = PossibleResponse.get_possible_response(player.id, active_group.id, possible_question.id)
+    @test_response = possible_response
     
     if possible_response.nil? # ideally this should never happen as there should be a response if we have a question.
       flash[:error] = "Something went wrong while generating a response"
