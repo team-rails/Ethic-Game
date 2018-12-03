@@ -13,12 +13,12 @@ Scenario: open the home page
     
 Scenario: see test scenario on  scenario page
   Given I am on the home page
-  Then I should see "Welcome"
+  Then I should see "Water Boiling"
   
 Scenario: See scenario name on detail page
     Given I am on the home page
-    And I go to the "Test Scenario" detail page
-    Then I should see "Test Scenario"
+    And I go to the 0 detail page
+    Then I should see "Water Boiling"
     
 Scenario: See scenario name on detail page
   Given I am on the home page
