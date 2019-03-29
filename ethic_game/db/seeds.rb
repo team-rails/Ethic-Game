@@ -5,7 +5,21 @@
 
 # link to seed: https://docs.google.com/spreadsheets/d/1H-mVSDo0hFwUeFb8rHDSiS8RFiM3ZbVd268LSIvMmLI/edit#gid=0
 
-desc = 'You are a member of a team of public relations officers assigned to a project. This project is a joint alliance between the US and Peruvian governments. Your role on this project tea is to provide public updates on this hight profile project --- a project that is costing the US and Peruvian governments LOTS of money.'
+#desc = 'You are a member of a team of public relations officers assigned to a project. This project is a joint alliance between the US and Peruvian governments. Your role on this project tea is to provide public updates on this hight profile project --- a project that is costing the US and Peruvian governments LOTS of money.'
+desc = "Welcome to the Ethics role playing game!\n\n Background:
+This game is modelled based on the high profile \"Peruvain Water Boiling\" project conducted by the US and Peruvian governments in the Peruvian villages that failed miserably. 
+
+What\'s your role?
+You are a member of a team of public relations officers assigned to this project. 
+Your role on this project team is to spread awareness about boiling water for drinking among the different groups of villagers through one-on-one interaction with each group.
+
+Learning Outcome:
+At the end of this project, you will be able to understand 
+-- the importance of communication
+-- the impact of ethnocentricity and cultural relativity
+-- the influence of worldviews or lack thereof in successful communication
+-- the reality that sometimes there is no correct solution or definite path to success"
+
 scenario = Scenario.create!(
     title: 'Water Boiling',
     description: desc,

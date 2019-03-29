@@ -1,24 +1,33 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
     
-   <h1 class='display4 header-text'><%= @scenario.title%></h1>
+   <h1 class='display4 header-text'>Ethics Game<%#= @scenario.title%></h1>
    <%= link_to 'Home Page', root_path()%>
     
 </div>
 
-<div class="container">
-    <div class="row mt-2 mb-2">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <!--<%= image_tag '/assets/village.jpg', style: 'height:max-height;width:max-width;' %>-->
-            <img class="img-responsive" src="/assetsvillage.jpg" style="width: 100%; height: 100%">
-        </div>
-        <div class="col-4"></div>
-    </div>
-</div>
+
 
 <div class="container">
     
-    <%= @scenario.description%>
+    <%#= @scenario.description.gsub(/\n/, '<br/>')%>
+    <p><center>
+        <strong>Welcome to the Ethics role playing game!</strong>
+    </center>
+    <p></p>
+       <b><i>Background:</i></b> This game is modelled based on the high profile 'Peruvain Water Boiling' project conducted by the US and Peruvian governments in the Peruvian villages that failed miserably. 
+    </p>
+    <p>
+        <b><i>What's your role?:</i></b> You are a member of a team of public relations officers assigned to this project. Your role on this project team is to spread awareness about boiling water for drinking among the different groups of villagers through one-on-one interaction with each group.
+    </p>
+    <p>
+        <b><i>Learning Outcome:</i></b> At the end of this project, you will be able to understand
+        <ul>
+            <li>the importance of communication</li>
+            <li>the impact of ethnocentricity and cultural relativity</li>
+            <li>the influence of worldviews or lack thereof in successful communication</li>
+            <li>the reality that sometimes there is no correct solution or definite path to success</li>
+        </ul>
+    </p>
     
 </div>
 <div class="container">
