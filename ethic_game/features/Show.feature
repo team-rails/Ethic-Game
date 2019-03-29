@@ -8,15 +8,17 @@ Background:
   Given I am on the "1" detail page
   And I fill in "name" with "Jane Doe"
   And I press "Start"
-  
-Scenario: See the scnerio name
-  Then I should see "Scenario: Water Boiling"
+
+#new  
+Scenario: See the title
+  Then I should see "Interactions with the various tribes"
     
-Scenario: See the scnerio description
-  Then I should see "You are a member of a team"
-  
+#Scenario: See the scnerio description
+#  Then I should see "You are a member of a team"
+
+#new  
 Scenario: See the default group
-  Then I should see "Village Group A"
+  Then I should see "Cacataibo Tribe"
   
 Scenario: See the my name
   Then I should see "Jane Doe"
@@ -28,28 +30,28 @@ Scenario: Initial conversation
   And I should see "Hello there"
   
 Scenario: Change group
-  When I press "Village Group B"
-  Then I should see "Village Group B"
-  When I press "Village Group C"
-  Then I should see "Village Group C"
-  When I press "Village Group A"
-  Then I should see "Village Group A"
+  When I press "Murunahua Tribe"
+  Then I should see "Murunahua Tribe"
+  When I press "Nanti Tribe"
+  Then I should see "Nanti Tribe"
+  When I press "Cacataibo Tribe"
+  Then I should see "Cacataibo Tribe"
   
 Scenario: Different group outputs
   When I fill in "user_question" with "Hello"
   And I press "Submit"
   Then I should see "Hello"
   And I should see "Hello there"
-  When I press "Village Group C"
+  When I press "Nanti Tribe"
   Then I fill in "user_question" with "Hello"
   And I press "Submit"
   Then I should see "Hello"
   And I should see "Welcome we were waiting for you"
   
-Scenario: Lower group standing
-  When I fill in "user_question" with "Dirty water"
-  And I press "Submit"
-  Then I should see "94.5"
+#Scenario: Lower group standing
+#  When I fill in "user_question" with "Dirty water"
+#  And I press "Submit"
+#  Then I should see "94.5"
   
 Scenario: Restart the game
    When I follow "Restart Game"

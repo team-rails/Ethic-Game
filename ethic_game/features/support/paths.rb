@@ -16,8 +16,10 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
       
-    when /^the "(.*)" detail page/
-      detail_path($1)
+    #when /^the "(.*)" detail page/
+    #  detail_path($1)
+    
+    when /^the detail page for "(.*)"$/ then detail_path($1)
       
     when /^the show page for "(.*)"/
       show_history_path($1)

@@ -12,13 +12,9 @@ Background:
 #  Then I should be on the home page
   
 #Team: Rails (Spring 2019)
-Scenario: See test scenario on scenario page
+Scenario: See title
   #Given I am on the home page
   Then I should see "Welcome to the Ethics Game"
 
-#Team: Rails (Spring 2019)  
-Scenario: Go to scenario detail page
-    #Given I am on the home page
-    And I follow "Water Boiling"
-    Then I should see "Water Boiling"
+
   
