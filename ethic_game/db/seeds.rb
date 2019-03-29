@@ -14,19 +14,25 @@ scenario = Scenario.create!(
     
 # Create the groups
 groupA = Group.create!(
-    name: 'Village Group A', 
-    population_percentage: 80,
+    name: 'Cacataibo Tribe', 
+    population_percentage: 35,
     scenario_id: scenario.id
 )
 
 groupB = Group.create!(
-    name: 'Village Group B',
-    population_percentage: 15,
+    name: 'Murunahua Tribe',
+    population_percentage: 55,
     scenario_id: scenario.id
 )
 
 groupC = Group.create!(
-    name: 'Village Group C', 
+    name: 'Nanti Tribe', 
+    population_percentage: 5,
+    scenario_id: scenario.id
+)
+
+groupD = Group.create!(
+    name: 'Yora Tribe', 
     population_percentage: 5,
     scenario_id: scenario.id
 )

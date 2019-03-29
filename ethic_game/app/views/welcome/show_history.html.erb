@@ -1,10 +1,9 @@
 
 <div class="jumbotron text-center" style="margin-bottom:0">
     
-    <h1 class="display-4 header-text">Scenario: <%= @scenario.title%></h1>
-    
-    <div class="container"><%= @scenario.description%></div>
-    
+    <h1 class="display-4 header-text">Interactions with the various tribes<%#= @scenario.title%></h1>
+    <%= link_to 'Restart Game', detail_path(id: @scenario.id), class: "scenario_start"%>
+   <%#= <div class="container"><%#= @scenario.description%><%#=</div>%>
 </div>
 
 <div class="container">
@@ -16,10 +15,10 @@
             </div>
         <%end%>
         <div class="card-header text-center">
-            Conversations <br/>
-            <%= link_to 'Restart Game', detail_path(id: @scenario.id), class: "scenario_start"%>
+            <%#= link_to 'Restart Game', detail_path(id: @scenario.id), class: "scenario_start"%>
+            <%#= Team: Rails (Spring 2019)%>
             <br/>
-                <div>Current Group Standing: <%= @player_group_standing.current_standing%> </div>
+                <div>Villager Response --> :-( <%#<%= @player_group_standing.current_standing%> </div>
             <br/>
             <ul class="nav nav-tabs">
                 <% @available_groups.each do |group| %> 
