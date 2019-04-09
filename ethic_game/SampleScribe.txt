@@ -1,0 +1,7 @@
+
+Hello	=> 	Hello there
+Where do you get your water 	=>	I usually collect it from the nearby irrigation ditch
+Why don't the villagers boil the water before drinking 	=> 	Because boiling water is considered evil
+Do you find that your sick often drinking the dirty irrigation water? 	=> 	I would, but it has a weird taste to me.  The irrigation water tastes better.
+Why don't you boil your water all of the time? 	=> 		We don't need cooked water when we aren't hot.  We need cold things when we feel good.
+Could you help us get the other villagers to boil their water? 		=> 		I would love to, but their ideas are different than mine
