@@ -56,6 +56,7 @@ class WelcomeController < ApplicationController
       @active_group = Group.first
     end
     
+    @group_possible_questions = Group.get_possible_questions(@active_group.id)
     @player_group_standing = PlayerGroupStanding.where(player_id: @player.id, group_id: @active_group.id).first()
     
     @histories = PlayerHistory.get_player_group_history(@player.id, @active_group.id)

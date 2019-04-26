@@ -7,6 +7,14 @@
 </div>
 
 <div class="container">
+    <div class="utContainer">
+    <h3>What can you talk about</h3>
+    <div class="scrolly">
+      <% @group_possible_questions.each do |u| %>
+        <div class='ut'><%= u.question %></div>  
+      <% end %>
+    </div>
+    </div>
 
     <div class="card">
         <% flash.each do |name, msg|%>
@@ -102,7 +110,7 @@
         <div class="card-footer">
             <%= form_tag reply_to_question_path(id: @scenario.id, active_id: @active_group.id) do %>
             <div class="row">
-                <div class="col-11">
+                <div class="col-10">
                     <%= text_field_tag :user_question, "",  class: 'form-control' %>
                 </div>
                 <div class="col-1">
