@@ -89,7 +89,7 @@ def scribeMain(personid, scribeName):
 			print(ind + 1, val) 
 			
 		print('\n')
-		Choice = input("Choose the group from the list above to whom " + str(scribeName) + "  wish to converse: ")
+		Choice = input("Choose the Group from above list to whom " + str(scribeName) + " wish to converse. For example, if " + str(scribeName) + " wish to converse with Cacataibo_Tribe, Press 1\nEnter any number between 1 to 4: ")
 
 		ScribeName		= scribeName
 		VillagerName	= LISTOFPPL_updated[Choice - 1] 
@@ -100,6 +100,7 @@ def scribeMain(personid, scribeName):
 		ScribeVillagerDetails = startScribe(ScribeName, VillagerName)
 		
 		createConversationFile(os.getcwd(), OutputConvFile, ScribeName, ScribeVillagerDetails[0], VillagerName, ScribeVillagerDetails[1])
+		EXIT_Conv = '\nDoes ' + str(scribeName) + ' wish to talk to any other group? Press yes to proceed further: '
 		if raw_input(EXIT_Conv).lower() == 'no':
 			break
 		else:
@@ -112,7 +113,7 @@ LISTOFPPL = ['Public_Relations_Officer', 'Cacataibo_Tribe', 'Murunahua_Tribe', '
 ENDOFPROGRAM = ['\n################################################################################', str(15*' ') +'Scribe Data Collection completed!!!!!!!!!!!!!!!!!!',  '################################################################################']
 
 EXIT_Scribe	= '\nPress exit at any instant to end the Conversation with '
-EXIT_Conv = '\nDo you wish to talk to any other group? Press yes to proceed further: '
+
 
 OutputConvFile = 'Scribe_Tribe_Conv.txt'
 
@@ -127,7 +128,7 @@ if __name__ == '__main__':
 	
 	print('\n')
 	
-	Choice = input('Choose the Scribe from above list. For example, if user wish Public Relations Officer to act as the Scribe, Press 1\nEnter any number between 1 to 5: ')
+	Choice = input('Choose the Scribe from above list. For example, if Public Relations Officer wish to act as the Scribe, Press 1\nEnter any number between 1 to 5: ')
 	if Choice in range(1,6):
 		ScribeName = str(LISTOFPPL[Choice - 1])
 		print('Scribe Name: ' + ScribeName)
