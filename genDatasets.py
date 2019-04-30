@@ -84,12 +84,13 @@ def scribeMain(personid, scribeName):
 	#print(LISTOFPPL)
 	
 	while True:
-		print("Enter the character you wish to Scribe for: ")
+		ScribeName		= scribeName
+		print("Characters that the " + str(scribeName) + " can talk to: ")
 		for ind,val in enumerate(LISTOFPPL_updated):
 			print(ind + 1, val) 
 			
 		print('\n')
-		Choice = input("Choose the Group from above list to whom " + str(scribeName) + " wish to converse. For example, if " + str(scribeName) + " wish to converse with Cacataibo_Tribe, Press 1\nEnter any number between 1 to 4: ")
+		Choice = input("Choose the Group from above list with whom the " + str(scribeName) + " wishes to converse. For example, if " + str(scribeName) + " wishes to converse with Cacataibo_Tribe, Press 1\nEnter any number between 1 to 4: ")
 
 		ScribeName		= scribeName
 		VillagerName	= LISTOFPPL_updated[Choice - 1] 
@@ -108,7 +109,7 @@ def scribeMain(personid, scribeName):
 	
 
 ##### Global Strings and List used
-LISTODISP = ['\n################################################################################', str(20*' ') + 'Scribe Data Collection for Ethics Game',  '################################################################################', '\nAvailable Groups to act as the Scribe',]
+LISTODISP = ['\n################################################################################', str(20*' ') + 'Scribe Data Collection for Ethics Game',  '################################################################################', '\nAvailable Groups to act as the Scribe for ',]
 LISTOFPPL = ['Public_Relations_Officer', 'Cacataibo_Tribe', 'Murunahua_Tribe', 'Nanti_Tribe', 'Yora_Tribe']
 ENDOFPROGRAM = ['\n################################################################################', str(15*' ') +'Scribe Data Collection completed!!!!!!!!!!!!!!!!!!',  '################################################################################']
 
@@ -128,10 +129,10 @@ if __name__ == '__main__':
 	
 	print('\n')
 	
-	Choice = input('Choose the Scribe from above list. For example, if Public Relations Officer wish to act as the Scribe, Press 1\nEnter any number between 1 to 5: ')
+	Choice = input('Choose the Scribe from above list. For example, if Public Relations Officer wishes to act as the Scribe, Press 1\nEnter any number between 1 to 5: ')
 	if Choice in range(1,6):
 		ScribeName = str(LISTOFPPL[Choice - 1])
-		print('Scribe Name: ' + ScribeName)
+		print('Scribe for: ' + ScribeName)
 		print('\n')
 	
 		scribeMain(Choice, ScribeName)
