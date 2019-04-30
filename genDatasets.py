@@ -2,7 +2,7 @@
 #!/usr/bin/python
 
 import os, sys, glob, re
-import datetime, pytz
+import datetime#, pytz
 
 ##### To remove all the Scribe related files in the given directory (use it in case of any memory overflow)
 def removeScrbieTextfile(Dir):
@@ -25,7 +25,8 @@ def DateTimeZone():
 def createConversationFile(Dir, FileName, ScribeName, ScribeCon, GroupName, GroupCon):
 	fopen = open(Dir + os.sep + FileName, 'a')
 	
-	DATETIME = DateTimeZone()
+	#DATETIME = DateTimeZone()
+	DATETIME = 'date'
 	fopen.write('Conversation between ' + str(ScribeName) + ' and ' + str(GroupName) + ' at ' + str(DATETIME)  + '\n')
 	
 	#Writing the contents to the outputfile

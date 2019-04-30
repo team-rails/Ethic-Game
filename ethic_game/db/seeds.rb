@@ -371,5 +371,38 @@ seed_group_data(groupB.id, groupBNegativeQuestions, groupBResponses)
 seed_group_data(groupC.id, groupCPositiveQuestions, groupCResponses)
 seed_group_data(groupC.id, groupCNegativeQuestions, groupCResponses)
 
+##insert data produced by python code to the database 
+def seed_group_data_from_file(file_name, group_id)
+    
+    File.foreach(file_name) { |line| 
+        question_string = line.split("=>").first
+        p question_string
+        response_string = line.split("=>").last
+        p response_string
+        question_obj = PossibleQuestion.create!(
+            question: question_string,
+            points: 10
+        )
+        response_obj = PossibleResponse.create!(
+                    response: response_string,
+                    points: 0,
+                    group_standing_threshold: 0
+                )
+        PossibleQuestionsResponse.create!(
+                    possible_question_id: question_obj.id,
+                    possible_response_id: response_obj.id
+                )
+        GroupsPossibleQuestion.create!(
+            group_id: group_id,
+            possible_question_id: question_obj.id
+        )
+    }
+end
 
-p "DB Seeded succesfully"  
+seed_group_data_from_file("groupA.txt", groupA.id)
+seed_group_data_from_file("groupB.txt", groupB.id)
+seed_group_data_from_file("groupC.txt", groupC.id)
+seed_group_data_from_file("groupD.txt", groupD.id)
+
+
+p "DB Seeded succesfully"
