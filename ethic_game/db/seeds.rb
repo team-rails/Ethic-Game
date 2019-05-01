@@ -376,12 +376,10 @@ def seed_group_data_from_file(file_name, group_id)
     
     File.foreach(file_name) { |line| 
         question_string = line.split("=>").first
-        p question_string
         response_string = line.split("=>").last
-        p response_string
         question_obj = PossibleQuestion.create!(
             question: question_string,
-            points: 10
+            points: 0
         )
         response_obj = PossibleResponse.create!(
                     response: response_string,
@@ -399,10 +397,10 @@ def seed_group_data_from_file(file_name, group_id)
     }
 end
 
-seed_group_data_from_file("groupA.txt", groupA.id)
-seed_group_data_from_file("groupB.txt", groupB.id)
-seed_group_data_from_file("groupC.txt", groupC.id)
-seed_group_data_from_file("groupD.txt", groupD.id)
+seed_group_data_from_file("Public_Relations_Officer_Cacataibo_Tribe_Scribe.txt", groupA.id)
+seed_group_data_from_file("Public_Relations_Officer_Murunahua_Tribe_Scribe.txt", groupB.id)
+seed_group_data_from_file("Public_Relations_Officer_Nanti_Tribe_Scribe.txt", groupC.id)
+seed_group_data_from_file("Public_Relations_Officer_Yora_Tribe_Scribe.txt", groupD.id)
 
 
 p "DB Seeded succesfully"
